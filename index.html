@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Виртуальды зертхана</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #191970;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #1E90FF;
+    }
+    header h1 {
+      margin: 0;
+    }
+    hr {
+      border: 1px solid #fff;
+      width: 80%;
+      margin: 20px auto;
+    }
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    nav ul li {
+      display: inline-block;
+      margin: 20px;
+    }
+    nav ul li a {
+      background-color: #1E90FF;
+      color: white;
+      padding: 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: block;
+      text-align: center;
+    }
+    nav ul li a:hover {
+      background-color: #4682B4;
+    }
+    section {
+      padding: 20px;
+      margin: 20px;
+      background-color: #282828;
+      border-radius: 10px;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      background-color: #444;
+      color: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #1E90FF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #4682B4;
+    }
+    pre {
+      background-color: #222;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Виртуальды зертхана</h1>
+    <hr>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#compiler">1. Онлайн компилятор</a></li>
+      <li><a href="#neural-network">2. Қарапайым нейрон желісі</a></li>
+      <li><a href="#cipher">3. Шифрлау және дешифрлау</a></li>
+      <li><a href="#processor">4. Процессор жинау</a></li>
+      <li><a href="#os">5. Операциялық жүйені орнату</a></li>
+    </ul>
+  </nav>
+
+  <!-- Онлайн компилятор бөлімі -->
+  <section id="compiler">
+    <h2>Онлайн компилятор</h2>
+    <textarea id="codeInput" placeholder="С++ кодын мұнда жазыңыз..." rows="10" cols="50"></textarea><br>
+    <button onclick="runCode()">Кодты орындау</button>
+    <h3>Нәтиже:</h3>
+    <pre id="output"></pre>
+  </section>
+
+  <!-- Қарапайым нейрон желісін жасау бөлімі -->
+  <section id="neural-network">
+    <h2>Қарапайым нейрон желісін жасау</h2>
+    <button onclick="trainNeuralNetwork()">Нейрон желісін жаттықтыру</button>
+    <h3>Нәтиже:</h3>
+    <pre id="neuralOutput"></pre>
+  </section>
+
+  <!-- Шифрлау және дешифрлау бөлімі -->
+  <section id="cipher">
+    <h2>Шифрлау және дешифрлау</h2>
+    <textarea id="textInput" placeholder="Мәтін жазыңыз..." rows="4" cols="50"></textarea><br>
+    <button onclick="encryptText()">Шифрлау</button>
+    <button onclick="decryptText()">Дешифрлау</button>
+    <h3>Нәтиже:</h3>
+    <pre id="cipherOutput"></pre>
+  </section>
+
+  <!-- Процессор жинау бөлімі -->
+  <section id="processor">
+    <h2>Процессор жинау</h2>
+    <p>Процессор жинау үшін келесі сілтемеге өтіңіз:</p>
+    <a href="https://www.computerhope.com/jargon/c/cpu-builder.htm" target="_blank">Процессор жинау құралын ашу</a>
+  </section>
+
+  <!-- Операциялық жүйені орнату бөлімі -->
+  <section id="os">
+    <h2>Операциялық жүйені орнату</h2>
+    <p>Операциялық жүйені орнату үшін келесі сілтемеге өтіңіз:</p>
+    <a href="https://www.virtualbox.org/" target="_blank">VirtualBox ресми сайты</a>
+  </section>
+
+  <script>
+    // Онлайн компилятор үшін JavaScript коды
+    function runCode() {
+      const code = document.getElementById('codeInput').value;
+      const output = document.getElementById('output');
+      
+      // С++ кодын тексеру үшін веб-сервис немесе сервер қажет.
+      // Қазіргі жағдайда тек HTML ішіндегі хабарлама көрсетіледі.
+      
+      if (code.trim() === "") {
+        output.textContent = "Код жазылмаған!";
+        return;
+      }
+
+      // Мысал: C++ кодының нәтижесін көрсету
+      output.textContent = "C++ коды орындалды: " + code;
+    }
+
+    // Қарапайым нейрон желісін жаттықтыру (Мысал)
+    function trainNeuralNetwork() {
+      const output = document.getElementById('neuralOutput');
+      output.textContent = "Нейрон желісі жаттықтырылған!";
+    }
+
+    // Атбаш шифрын орындау
+    function encryptText() {
+      const inputText = document.getElementById('textInput').value;
+      const alphabet = "abcdefghijklmnopqrstuvwxyz";
+      const reversedAlphabet = alphabet.split("").reverse().join("");
+      
+      let encryptedText = "";
+      for (let i = 0; i < inputText.length; i++) {
+        const char = inputText[i].toLowerCase();
+        const index = alphabet.indexOf(char);
+        if (index !== -1) {
+          encryptedText += reversedAlphabet[index];
+        } else {
+          encryptedText += inputText[i];
+        }
+      }
+      document.getElementById('cipherOutput').textContent = encryptedText;
+    }
+
+    function decryptText() {
+      const inputText = document.getElementById('textInput').value;
+      const alphabet = "abcdefghijklmnopqrstuvwxyz";
+      const reversedAlphabet = alphabet.split("").reverse().join("");
+      
+      let decryptedText = "";
+      for (let i = 0; i < inputText.length; i++) {
+        const char = inputText[i].toLowerCase();
+        const index = reversedAlphabet.indexOf(char);
+        if (index !== -1) {
+          decryptedText += alphabet[index];
+        } else {
+          decryptedText += inputText[i];
+        }
+      }
+      document.getElementById('cipherOutput').textContent = decryptedText;
+    }
+  </script>
+
+</body>
+</html>
